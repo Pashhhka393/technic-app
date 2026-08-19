@@ -1,0 +1,29 @@
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header .header-nav button {
+  font-size: 20px;
+  border-bottom: 1px solid transparent;
+  color: gray;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+  }
+}

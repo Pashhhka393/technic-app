@@ -34,7 +34,7 @@ const ProductItem = ({
             onClick={(e) => {
               deleteCard(product.id);
               e.preventDefault();
-              setLiked();
+              e.stopPropagation();
             }}
           />
         </div>

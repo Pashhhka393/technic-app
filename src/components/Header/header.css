@@ -27,3 +27,10 @@ header .header-nav button {
     border-bottom: 1px solid #bfbfbf;
   }
 }
+
+
+@media (max-width: 400px) {
+  .header-items span {
+    font-size: 20px;
+  }
+}

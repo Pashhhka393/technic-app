@@ -56,14 +56,14 @@
   gap: 5px;
 }
 
-.filter-cards {
+.filter-and-search-cards {
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 20px 0;
 }
 
-.filter-cards button {
+.filter-and-search-cards button {
   border: 1px solid #e6e6e6;
   padding: 5px 10px;
   border-radius: 20px;
@@ -74,7 +74,17 @@
   }
 }
 
-.filter-cards button.active {
+.filter-and-search-cards input {
+  border: 1px solid #e6e6e6;
+  padding: 6px 15px;
+  border-radius: 20px;
+}
+input:focus {
+  border-color: rgb(99, 99, 99);
+  outline: none;
+}
+
+.filter-and-search-cards button.active {
   background: #e6e6e6;
 }
 
@@ -103,40 +113,99 @@
 }
 
 .card-product {
-  margin-top: 20px;
+  padding: 40px 0 80px;
 }
 
 .card-product button {
-  margin: 0 0 30px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid #e6e6e6;
-  padding: 5px 15px;
-  border-radius: 20px;
+  padding: 8px 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  background: white;
   cursor: pointer;
+  transition: 0.2s;
+}
 
-  &:hover {
-    background: #e6e6e6;
-  }
+.card-product button:hover {
+  background: #f5f5f5;
 }
 
 .card-items {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   align-items: center;
-  justify-content: space-between;
+  padding: 40px;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  background: white;
+}
+
+.card-items img {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  border-radius: 15px;
 }
 
 .card-desc {
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border: 1px solid #e6e6e6;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+.card-desc > p:first-child {
+  margin-bottom: 10px;
+  color: #777;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .title {
-  font-size: 24px;
-  margin: 10px 0;
-  border-bottom: 1px solid gray;
+  margin: 0 0 20px;
+  padding-bottom: 15px;
+  width: 100%;
+  font-size: 32px;
+  line-height: 1.2;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.card-desc > p:last-child {
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+@media (max-width: 414px) {
+  .title {
+    width: 150px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .card-product {
+    padding: 20px 0 40px;
+  }
+
+  .card-items {
+    padding: 15px;
+  }
+
+  .card-items img {
+    height: 230px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
 }

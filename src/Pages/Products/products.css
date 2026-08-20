@@ -75,6 +75,7 @@
 }
 
 .filter-and-search-cards input {
+  width: 150px;
   border: 1px solid #e6e6e6;
   padding: 6px 15px;
   border-radius: 20px;

@@ -73,7 +73,7 @@ const Products = () => {
           <input
             value={search}
             type="text"
-            placeholder="Введите для поиска..."
+            placeholder="Поиск..."
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>

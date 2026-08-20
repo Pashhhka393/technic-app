@@ -4,32 +4,37 @@ import ProductPage from "../Pages/ProductPage/ProductPage";
 import CreateProduct from "../Pages/CreateProduct/CreateProduct";
 import MainLayout from "../layouts/MainLayout";
 
-export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayout />,
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <MainLayout />,
 
-    children: [
-      {
-        index: true,
-        element: <Navigate to="products" replace />,
-      },
-      {
-        path: "products",
-        element: <Products />,
-      },
-      {
-        path: "products/:id",
-        element: <ProductPage />,
-      },
-      {
-        path: "create-product",
-        element: <CreateProduct />,
-      },
-      {
-        path: "*",
-        element: <div>Страница не найдена!</div>,
-      },
-    ],
+      children: [
+        {
+          index: true,
+          element: <Navigate to="products" replace />,
+        },
+        {
+          path: "products",
+          element: <Products />,
+        },
+        {
+          path: "products/:id",
+          element: <ProductPage />,
+        },
+        {
+          path: "create-product",
+          element: <CreateProduct />,
+        },
+        {
+          path: "*",
+          element: <div>Страница не найдена!</div>,
+        },
+      ],
+    },
+  ],
+  {
+    basename: "/technic-app",
   },
-]);
+);

@@ -1,40 +1,35 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createHashRouter, Navigate } from "react-router-dom";
 import Products from "../Pages/Products/ProductsPage";
 import ProductPage from "../Pages/ProductPage/ProductPage";
 import CreateProduct from "../Pages/CreateProduct/CreateProduct";
 import MainLayout from "../layouts/MainLayout";
 
-export const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <MainLayout />,
-
-      children: [
-        {
-          index: true,
-          element: <Navigate to="products" replace />,
-        },
-        {
-          path: "products",
-          element: <Products />,
-        },
-        {
-          path: "products/:id",
-          element: <ProductPage />,
-        },
-        {
-          path: "create-product",
-          element: <CreateProduct />,
-        },
-        {
-          path: "*",
-          element: <div>Страница не найдена!</div>,
-        },
-      ],
-    },
-  ],
+export const router = createHashRouter([
   {
-    basename: "/technic-app",
+    path: "/",
+    element: <MainLayout />,
+
+    children: [
+      {
+        index: true,
+        element: <Navigate to="products" replace />,
+      },
+      {
+        path: "products",
+        element: <Products />,
+      },
+      {
+        path: "products/:id",
+        element: <ProductPage />,
+      },
+      {
+        path: "create-product",
+        element: <CreateProduct />,
+      },
+      {
+        path: "*",
+        element: <div>Страница не найдена!</div>,
+      },
+    ],
   },
-);
+]);

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useStore } from "../../store/productStore";
 import "./createproduct.css";
 
 const CreateProduct = () => {
@@ -8,6 +9,8 @@ const CreateProduct = () => {
   const [price, setPrice] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<string>("");
 
+  const addProduct = useStore((state) => state.addProduct);
+  const products = useStore((state) => state.products);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -27,7 +30,7 @@ const CreateProduct = () => {
       return;
     }
 
-    console.log({
+    addProduct({
       category: category.trim(),
       title: title.trim(),
       description: desc.trim(),
@@ -41,6 +44,8 @@ const CreateProduct = () => {
     setPrice("");
     setImageUrl("");
   };
+
+  console.log(products)
 
   return (
     <section className="form-section">

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
@@ -5,17 +6,22 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-items">
-          <span className="text-2xl font-bold">Product Store</span>
+          <Link to="/">
+            <span className="text-2xl font-bold">Product Store</span>
+          </Link>
           <nav className="header-nav flex gap-5">
             <ul className="flex  gap-5">
-              <li>
-                <button>Товары </button>
-              </li>
-              <li>
-                <button> + Создать </button>
-              </li>
+              <Link to="/products">
+                <li>
+                  <button>Товары </button>
+                </li>
+              </Link>
+              <Link to="/create-product">
+                <li>
+                  <button> + Создать </button>
+                </li>
+              </Link>
             </ul>
-            <button className="header-favourite">Избранное</button>
           </nav>
         </div>
       </div>
